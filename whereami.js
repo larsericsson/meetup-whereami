@@ -1,7 +1,7 @@
 (function(window) {
   var $waitlistEl = $('#rsvp-list-waitlist');
   var myId = Meetup.Data.meetstacheRsvpEvent.Member.memberId;
-  var $myRsvpEl = $('[data-memberid="' + myId + '"');
+  var $myRsvpEl = $waitlistEl.find($('[data-memberid="' + myId + '"')).eq(0);
   var myPos = $waitlistEl.children().index($myRsvpEl) + 1;
 
   if (myPos >= 1) {
