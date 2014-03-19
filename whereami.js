@@ -4,7 +4,7 @@
   var $myRsvpEl = $('[data-memberid="' + myId + '"');
   var myPos = $waitlistEl.children().index($myRsvpEl) + 1;
 
-  if (myPos >= 0) {
+  if (myPos >= 1) {
     alert("You're number " + myPos + " on the waitlist");
   } else {
     alert("Couldn't find you on the waitlist");
