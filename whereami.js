@@ -1,12 +1,15 @@
 (function(window) {
   var $waitlistEl = $('#rsvp-list-waitlist');
   var myId = Meetup.Data.meetstacheRsvpEvent.Member.memberId;
-  var $myRsvpEl = $waitlistEl.find($('[data-memberid="' + myId + '"')).eq(0);
-  var myPos = $waitlistEl.children().index($myRsvpEl) + 1;
+  var myRsvp = $waitlistEl.find($('#rsvp_' + myId)).eq(0);
+  
+  var myPos = $waitlistEl.children().index(myRsvp);
 
-  if (myPos >= 1) {
-    alert("You're number " + myPos + " on the waitlist");
-  } else {
-    alert("Couldn't find you on the waitlist");
-  }
+  if (myRsvp && myPos && myPos >= 0)
+    alert(myPos + " people are ahead of you on the waitlist");
+  else if (myRsvp)
+    alert("You're going!")
+  else 
+    alert("You did not RSVP.");
+
 })(window);
